@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GManager | Signup</title>
+</head>
+<body>
+    <h1>Sign Up Form</h1>
+    <form method="post" action="/signup">
+        <input type="text" placeholder="Full Name" name="fname"><br>
+        <input type="email" placeholder="Email" name="email" required><br>
+        <input type="password" placeholder="Password" name="password" required><br>
+        <button>Sign Up</button>
+    </form>
+
+    <script>
+        <% if(typeof message != 'undefined') { %>
+             alert('<%= message %>')
+        <% } %>
+    </script>
+</body>
+</html>
