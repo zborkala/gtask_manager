@@ -17,6 +17,10 @@
         <% if(typeof message != 'undefined') { %>
              alert('<%= message %>')
         <% } %>
+
+        <% if(typeof token != 'undefined') { %>
+             document.cookie = "tokenJam=<%= token %>; expires=Fri, 10 Jan 2025 12:00:00 UTC; path=/";
+        <% } %>
     </script>
 </body>
 </html>

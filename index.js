@@ -81,8 +81,7 @@ app.post('/login', (req, res) => {
             return res.render('login', { message: 'User doesn\'t exist!' })
         } else if(bcrypt.compareSync(password, result[0]['password'])) {
             const token = jwt.sign({user_id: result[0].id, full_name: result[0].full_name}, '123456abcd', {expiresIn: '1h'})
-            console.log(token)
-            return res.redirect('/tasks')
+            return res.render('login', {token: token})
         } else {
             return res.render('login', { message: 'Incorrect password!' });
         }
